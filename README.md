@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Solution]()
+- Solution URL: [Github Solution](https://github.com/1deadjoe/tip-calculator-app.git)
 - Live Site URL: [Add live site URL here]()
 
 ## My process
