@@ -1,0 +1,239 @@
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--Light-grayish-cyan);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+main {
+  width: 100%;
+  max-width: 920px;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tip-menu {
+  background-color: var(--White);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calculator,
+.tip-results {
+  flex: 1;
+}
+
+.form {
+  margin-bottom: 2rem;
+}
+
+label {
+  color: var(--Dark-grayish-cyan);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.people input {
+  background: url(/images/icon-person.svg) no-repeat 1rem 1rem;
+}
+
+.bill input {
+  background: url(/images/icon-dollar.svg) no-repeat 1rem 1rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  background-color: var(--Very-light-grayish-cyan);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 24px;
+  text-align: right;
+  color: var(--Very-dark-cyan);
+  font-weight: 700;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--Strong-cyan);
+}
+
+.selections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.selections button,
+#custom-tip {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.selections button {
+  background-color: var(--Very-dark-cyan);
+  color: var(--White);
+}
+
+.selections button:hover,
+.selections button.active,
+.active-tip.active-tip {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+#custom-tip {
+  background-color: var(--Very-light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+  text-align: right;
+}
+.people div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .error {
+    color: red;
+    margin-bottom: 0.5rem;
+  }
+}
+.hidden.hidden {
+  display: none;
+}
+.tip-results {
+  background-color: var(--Very-dark-cyan);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.amnt-per-person,
+.amnt-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.category h2 {
+  color: var(--White);
+  font-size: 1rem;
+}
+
+.category p {
+  color: var(--Grayish-cyan);
+  font-size: 0.8rem;
+}
+
+.result {
+  color: var(--Strong-cyan);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+button[type="reset"] {
+  width: 100%;
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="reset"]:hover {
+  background-color: var(--Light-grayish-cyan);
+}
+
+.error-message {
+  color: #e17052;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.error input {
+  border-color: #e17052;
+}
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .tip-menu {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .selections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  input[type="text"],
+  .selections button,
+  #custom-tip {
+    font-size: 20px;
+  }
+
+  .result {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 375px) {
+  .selections {
+    grid-template-columns: 1fr;
+  }
+
+  input[type="text"],
+  .selections button,
+  #custom-tip {
+    font-size: 18px;
+  }
+
+  .result {
+    font-size: 32px;
+  }
+}
